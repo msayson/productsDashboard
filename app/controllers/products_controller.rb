@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
    def index
       @productsbytitle = Product.order(title: :asc)
+      @statuscounts = Product.group(:status).count
    end
 
    def show

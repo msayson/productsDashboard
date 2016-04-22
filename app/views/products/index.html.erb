@@ -6,6 +6,12 @@
   Total number of products: <%= @productsbytitle.size %>
 </p>
 
+<ul>
+  <% @statuscounts.each do |count| %>
+    <li><%= count[0] %>: <%= count[1] %></li>
+  <% end %>
+</ul>
+
 <table>
   <tr>
     <th>Title</th>
