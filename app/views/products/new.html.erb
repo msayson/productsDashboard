@@ -1,3 +1,5 @@
+<%= render 'shared/menu' %>
+
 <h1>New Product</h1>
 
 <%= form_for :product, url: products_path do |f| %>
@@ -34,6 +36,3 @@
     <%= f.submit %>
   </p>
 <% end %>
-
-<%= link_to 'Home', controller: 'welcome' %>
-<%= link_to 'All Products', controller: 'products' %>
