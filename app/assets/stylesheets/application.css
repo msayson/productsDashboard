@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+   font-family: Lato, Arial, Helvetica;
+}
+
+a {
+   color: #3572b0;
+   text-decoration: none;
+}
+
+a:focus, a:active, a:hover {
+   text-decoration: underline;
+}
+
+a:active {
+   color: red;
+}

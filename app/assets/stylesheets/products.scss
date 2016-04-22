@@ -4,6 +4,7 @@
    box-sizing: border-box;
    display: table-cell;
    padding-left: 0px;
+   padding-right: 20px;
 }
 
 .vertical_menu_list {
@@ -14,6 +15,10 @@
    line-height: 1.4;
    list-style: none;
    word-wrap: break-word;
+}
+
+.sortableColumn {
+   color: black;
 }
 
 .main_content {
