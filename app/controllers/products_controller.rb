@@ -1,4 +1,7 @@
 class ProductsController < ApplicationController
+   #Expose sort_column and sort_direction methods to helper functions
+   helper_method :sort_column, :sort_direction
+
    def index
       @productsbytitle = Product.order(product_order_params)
       @statuscounts = Product.group(:status).count
