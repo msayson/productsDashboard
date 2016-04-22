@@ -1,16 +1,21 @@
 <%= render 'shared/menu' %>
 
-<p>
-<strong>Title:</strong>
-<%= @product.title %>
-</p>
+<div class='page_panel'>
+   <%= render 'products/productPagesMenu' %>
+   <div class='main_content'>
+      <p>
+      <strong>Title:</strong>
+      <%= @product.title %>
+      </p>
 
-<p>
-<strong>Status:</strong>
-<%= @product.status %>
-</p>
+      <p>
+      <strong>Status:</strong>
+      <%= @product.status %>
+      </p>
 
-<p>
-<strong>Features Supported:</strong>
-<%= @product.supportedFeatures %>
-</p>
+      <p>
+      <strong>Features Supported:</strong>
+      <%= @product.supportedFeatures %>
+      </p>
+   </div>
+</div>

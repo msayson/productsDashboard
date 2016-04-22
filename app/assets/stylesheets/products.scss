@@ -1,3 +1,23 @@
-// Place all the styles related to the products controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// Styles related to the products controller
+
+.vertical_menu {
+   box-sizing: border-box;
+   display: table-cell;
+   padding-left: 0px;
+}
+
+.vertical_menu_list {
+   padding-left: 0px;
+}
+
+.vertical_menu_item {
+   line-height: 1.4;
+   list-style: none;
+   word-wrap: break-word;
+}
+
+.main_content {
+   box-sizing: border-box;
+   display: table-cell;
+   padding-right: 0px;
+}
