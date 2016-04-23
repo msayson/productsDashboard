@@ -6,7 +6,7 @@ before_install:
 
 before_script:
   - bundle update
-  - bin/rake db:migrate RAILS_ENV=test
+  - rake db:migrate RAILS_ENV=test
 
 rvm:
 - 2.2.4
