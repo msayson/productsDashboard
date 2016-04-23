@@ -16,6 +16,12 @@ Products Dashboard is first and foremost a side project for exploring the Ruby o
 
 * Database initialization: TODO
 
-* How to run the test suite: TODO
+* How to run the test suite: "rake test"
 
 * Deployment instructions: TODO
+
+Code Status:
+
+master: [![Build Status](https://travis-ci.org/msayson/productsDashboard.svg?branch=master)](https://travis-ci.org/msayson/productsDashboard)
+
+dev: [![Build Status](https://travis-ci.org/msayson/productsDashboard.svg?branch=dev)](https://travis-ci.org/msayson/productsDashboard)
