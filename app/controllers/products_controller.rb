@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
 
    def index
       @productsbytitle = Product.order(product_order_params)
-      @statuscounts = Product.group(:status).count
+      @statuscounts = Product.status_counts
    end
 
    def show

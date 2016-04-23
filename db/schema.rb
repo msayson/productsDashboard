@@ -13,19 +13,10 @@
 
 ActiveRecord::Schema.define(version: 20160421193703) do
 
-  create_table "product_summaries", force: :cascade do |t|
-    t.string   "title"
-    t.string   "status"
-    t.text     "text"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "products", force: :cascade do |t|
     t.string   "title"
     t.string   "status"
     t.text     "supportedFeatures"
-    t.text     "text"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
   end
