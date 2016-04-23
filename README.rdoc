@@ -20,10 +20,12 @@ Products Dashboard is first and foremost a side project for exploring the Ruby o
 
 * Deployment instructions: TODO
 
-## Code Status:
+== Code Status
 
 Master branch:
+
 {<img src="https://travis-ci.org/msayson/productsDashboard.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/msayson/productsDashboard]
 
 Dev branch:
+
 {<img src="https://travis-ci.org/msayson/productsDashboard.svg?branch=dev" alt="Build Status" />}[https://travis-ci.org/msayson/productsDashboard]
