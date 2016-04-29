@@ -1,5 +1,8 @@
 language: ruby
 
+cache:
+  bundler: true
+
 before_install:
   - gem install bundler
   - "rm ${BUNDLE_GEMFILE}.lock"
