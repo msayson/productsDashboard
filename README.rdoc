@@ -18,6 +18,10 @@ Products Dashboard is first and foremost a side project for exploring the Ruby o
 
 * How to run the test suite: "rake test"
 
+* How to run the server locally:
+  * rake db:migrate RAILS_ENV=development
+  * rails server
+
 * Deployment instructions: TODO
 
 == Code Status
