@@ -30,3 +30,9 @@ a:focus, a:active, a:hover {
 a:active {
    color: red;
 }
+
+.horizontal_menu_item {
+   display: inline-block;
+   padding-left: 6px;
+   padding-right: 6px;
+}
