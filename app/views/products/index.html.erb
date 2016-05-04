@@ -16,14 +16,12 @@
   <tr>
     <th><%= sortable_column 'title' %></th>
     <th><%= sortable_column 'status' %></th>
-    <th colspan="1"></th>
   </tr>
 
   <% @productsbytitle.each do |product| %>
     <tr>
-      <td><%= product.title %></td>
+      <td><%= link_to product.title, product_path(product) %></td>
       <td><%= product.status %></td>
-      <td><%= link_to 'Show More', product_path(product) %></td>
     </tr>
   <% end %>
 </table>
