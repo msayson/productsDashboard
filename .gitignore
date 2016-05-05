@@ -1,6 +1,9 @@
 # Ignore Mac OSX environment files
 *DS_Store
 
+# Ignore Sublime workspace files
+*.sublime-workspace
+
 *.rbc
 capybara-*.html
 .rspec
