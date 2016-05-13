@@ -10,6 +10,9 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    logger.error "Attempt to access invalid product #{params[:id]}"
+    redirect_to '/products', notice: 'Invalid product'
   end
 
   def new

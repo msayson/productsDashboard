@@ -14,12 +14,17 @@ class ProductsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test 'should redirect to /products if product does not exist' do
+    get :show, id: 911
+    assert_redirected_to '/products'
+  end
+
   test 'should get new' do
     get :new
     assert_response :success
   end
 
-  # Test create action renders/redirects to correct pages
+  # Test that create action renders/redirects to correct pages
   test 'should render new on invalid create' do
     get :create, product: { status: 'Planned' }
     assert !response.error?, 'Should handle errors instead of passing them'
@@ -33,6 +38,7 @@ class ProductsControllerTest < ActionController::TestCase
     assert_redirected_to(assigns[:product])
   end
 
+  # Test that actions generate expected paths
   test 'should generate index' do
     assert_generates '/products', controller: 'products', action: 'index'
   end
