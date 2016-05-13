@@ -26,6 +26,13 @@ class ProductsControllerTest < ActionController::TestCase
     assert_template :new
   end
 
+  test 'should redirect to show on successful create' do
+    product = Product.new(id: 823, title: 'Zendesk', status: 'Planned')
+    get :create, product: product.attributes
+    assert !response.error?, 'Should create product without errors'
+    assert_redirected_to(assigns[:product])
+  end
+
   test 'should generate index' do
     assert_generates '/products', controller: 'products', action: 'index'
   end
