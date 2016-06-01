@@ -2,7 +2,9 @@
 	"folders":
 	[
 		{
-			"path": "."
+			"path": ".",
+			"file_exclude_patterns": [".keep"],
+			"folder_exclude_patterns": [".bundle", "bin", "concerns", "log", "tmp", "vendor"]
 		}
 	],
 	"settings":
