@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: 'Office Supplies'
+  description: 'General office equipment and consumables'
+
+two:
+  name: 'Movies'
+  description: 'DVDs, BlueRay disks and VHS cassettes'
