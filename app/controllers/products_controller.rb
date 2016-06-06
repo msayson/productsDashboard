@@ -60,7 +60,8 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:title, :status, :supportedFeatures, category_ids: [])
+    params.require(:product)
+          .permit(:title, :status, category_ids: [])
   end
 
   def product_order_params

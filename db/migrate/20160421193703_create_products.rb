@@ -3,7 +3,6 @@ class CreateProducts < ActiveRecord::Migration
     create_table :products do |t|
       t.string :title
       t.string :status
-      t.text :supportedFeatures
 
       t.timestamps null: false
     end

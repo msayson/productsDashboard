@@ -3,24 +3,19 @@
 one:
   title: Atlassian JIRA
   status: Deployed
-  supportedFeatures: Bugs, Tasks, User stories
 
 two:
   title: HP ALM
   status: Released
-  supportedFeatures: Bugs, Tasks
 
 three:
   title: IBM RTC
   status: Deployed
-  supportedFeatures: Issues, Tasks
 
 four:
   title: Bugzilla
   status: Deployed
-  supportedFeatures: Bugs, supportedFeatures
 
 five:
   title: Redmine
   status: Planned
-  supportedFeatures: NULL

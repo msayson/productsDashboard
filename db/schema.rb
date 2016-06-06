@@ -30,9 +30,8 @@ ActiveRecord::Schema.define(version: 20160605230325) do
   create_table "products", force: :cascade do |t|
     t.string   "title"
     t.string   "status"
-    t.text     "supportedFeatures"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
