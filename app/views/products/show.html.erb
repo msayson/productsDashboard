@@ -6,6 +6,13 @@
       </h1>
 
       <p>
+         <strong>Categories:</strong>
+         <ul>
+            <% @product.categories.each do |cat|  %>
+            <li><%= cat.name %></li>
+            <% end %>
+         </ul>
+      </p>
       <strong>Status:</strong>
       <%= @product.status %>
       </p>
@@ -16,3 +23,6 @@
       </p>
    </div>
 </div>
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>
