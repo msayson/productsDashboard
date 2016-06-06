@@ -1,23 +1,23 @@
 <div class='page_panel'>
-   <%= render 'products/productPagesMenu' %>
-   <div class='main_content'>
-      <h1>
-      <%= @product.title %>
-      </h1>
+  <%= render 'products/productPagesMenu' %>
+  <div class='main_content'>
+    <h1>
+    <%= @product.title %>
+    </h1>
 
-      <p>
-         <strong>Categories:</strong>
-         <ul>
-            <% @product.categories.each do |cat|  %>
-            <li><%= cat.name %></li>
-            <% end %>
-         </ul>
-      </p>
+    <p>
+      <strong>Categories:</strong>
+      <ul>
+        <% @product.categories.each do |cat|  %>
+          <li><%= cat.name %></li>
+        <% end %>
+      </ul>
+    </p>
       <strong>Status:</strong>
       <%= @product.status %>
-      </p>
-   </div>
-</div>
+    </p>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+    <%= link_to 'Edit', edit_product_path(@product) %> |
+    <%= link_to 'Back', products_path %>
+  </div>
+</div>

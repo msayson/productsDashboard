@@ -1,31 +1,36 @@
-<h1>All Products</h1>
+<div class='page_panel'>
+  <%= render 'products/productPagesMenu' %>
+  <div class='main_content'>
+    <h1>All Products</h1>
 
-<p>
-  Total number of products: <%= @productsbytitle.size %>
-</p>
+    <p>
+      Total number of products: <%= @productsbytitle.size %>
+    </p>
 
-<ul>
-  <% @statuscounts.each do |count| %>
-    <li><%= count[0] %>: <%= count[1] %></li>
-  <% end %>
-</ul>
+    <ul>
+      <% @statuscounts.each do |count| %>
+        <li><%= count[0] %>: <%= count[1] %></li>
+      <% end %>
+    </ul>
 
-<table>
-  <tr>
-    <th><%= sortable_column 'title' %></th>
-    <th><%= sortable_column 'status' %></th>
-    <th colspan="3"></th>
-  </tr>
+    <table>
+      <tr>
+        <th><%= sortable_column 'title' %></th>
+        <th><%= sortable_column 'status' %></th>
+        <th colspan="3"></th>
+      </tr>
 
-  <% @productsbytitle.each do |product| %>
-    <tr>
-      <td><%= product.title %></td>
-      <td><%= product.status %></td>
-      <td><%= link_to 'View', product_path(product) %></td>
-      <td><%= link_to 'Edit', edit_product_path(product) %></td>
-      <td><%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-  <% end %>
-</table>
+      <% @productsbytitle.each do |product| %>
+        <tr>
+          <td><%= product.title %></td>
+          <td><%= product.status %></td>
+          <td><%= link_to 'View', product_path(product) %></td>
+          <td><%= link_to 'Edit', edit_product_path(product) %></td>
+          <td><%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </table>
 
-<%= link_to 'New Product', new_product_path %>
+    <%= link_to 'New Product', new_product_path %>
+  </div>
+</div>
