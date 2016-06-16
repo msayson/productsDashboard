@@ -2,12 +2,19 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
-  # Expose sort_column and sort_direction methods to helper functions
-  helper_method :sort_column, :sort_direction
-
   def index
-    @productsbytitle = Product.order(product_order_params)
+    @filterrific = init_filterrific || return # Redirect to reset filterrific
+    @products = @filterrific.find.page(params[:page])
     @statuscounts = Product.status_counts
+
+    # Respond to html for initial page load and to js for AJAX filter updates.
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  rescue ActiveRecord::RecordNotFound => err
+    puts "Resetting filterrific params: #{err.message}"
+    redirect_to(reset_filterrific_url(format: :html)) && return
   end
 
   def show
@@ -64,17 +71,13 @@ class ProductsController < ApplicationController
           .permit(:title, :status, category_ids: [])
   end
 
-  def product_order_params
-    sort_column + ' ' + sort_direction
-  end
-
-  def sort_column
-    # Default to sorting by title
-    Product.column_names.include?(params[:sort]) ? params[:sort] : 'title'
-  end
-
-  def sort_direction
-    # Default to ascending order
-    %w(asc desc).include?(params[:direction]) ? params[:direction] : 'asc'
+  def init_filterrific
+    initialize_filterrific(
+      Product,
+      params[:filterrific],
+      select_options: {
+        sorted_by: Product.options_for_sorted_by
+      }
+    )
   end
 end
