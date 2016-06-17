@@ -1,7 +1,5 @@
 <div id='filterrific_results'>
-  <div>
-    <%= page_entries_info products %>
-  </div>
+  <%= page_entries_info products %>
 
   <table>
     <tr>
@@ -19,6 +17,5 @@
       </tr>
     <% end %>
   </table>
+  <%= will_paginate products %>
 </div>
-
-<%= will_paginate products %>
