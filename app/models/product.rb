@@ -19,6 +19,10 @@ class Product < ActiveRecord::Base
     end
   }
 
+  scope :with_category, lambda { |category_id|
+    joins(:categories).where(id: category_id).uniq unless category_id.nil?
+  }
+
   # Searches products on title, matches using LIKE
   scope :search_by_title, lambda { |query|
     return nil if query.blank?
@@ -28,6 +32,7 @@ class Product < ActiveRecord::Base
     search_term =
       (query.downcase.tr('*', '%') + '%')
       .gsub(/%+/, '%')
+
     where(
       [search_term].map { '(LOWER(products.title) LIKE ?)' }.join(' AND '),
       search_term
@@ -39,7 +44,8 @@ class Product < ActiveRecord::Base
     default_filter_params: { sorted_by: 'title_asc' },
     available_filters: [
       :sorted_by,
-      :search_by_title
+      :search_by_title,
+      :with_category
     ]
   )
 
@@ -49,6 +55,13 @@ class Product < ActiveRecord::Base
       ['Title (a-z)', 'title_asc'],
       ['Status (a-z)', 'status_asc']
     ]
+  end
+
+  # Provide select options for filterrific with_category query
+  def self.options_for_with_category
+    Category.all.map { |c| [c.name, c.id] }
+            .sort! { |left, right| left[0].downcase <=> right[0].downcase }
+            .unshift(['', nil])
   end
 
   def self.status_counts

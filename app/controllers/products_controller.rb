@@ -76,7 +76,8 @@ class ProductsController < ApplicationController
       Product,
       params[:filterrific],
       select_options: {
-        sorted_by: Product.options_for_sorted_by
+        sorted_by: Product.options_for_sorted_by,
+        with_category: Product.options_for_with_category
       }
     )
   end
