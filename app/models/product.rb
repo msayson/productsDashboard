@@ -23,17 +23,14 @@ class Product < ActiveRecord::Base
   scope :search_by_title, lambda { |query|
     return nil if query.blank?
 
-    # condition query, parse into individual keywords
-    terms = query.downcase.split(/\s+/)
-
     # replace "*" with "%" for wildcard searches,
     # append '%', remove duplicate '%'s
-    terms = terms.map do |e|
-      (e.gsub('*', '%') + '%').gsub(/%+/, '%')
-    end
+    search_term =
+      (query.downcase.tr('*', '%') + '%')
+      .gsub(/%+/, '%')
     where(
-      terms.map { '(LOWER(products.title) LIKE ?)' }.join(' AND '),
-      *terms.flatten
+      [search_term].map { '(LOWER(products.title) LIKE ?)' }.join(' AND '),
+      search_term
     )
   }
 
